@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>webIt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Baloo Bhai 2', cursive;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(rgb(172, 255, 255, .5), rgb(235, 238, 241, .7)), url("webdev.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            clip-path: polygon(100% 0%, 100% 73%, 50% 100%, 0 71%, 0 0);
+            
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: .5;
+            z-index: -1;
+            background: linear-gradient(to right, rgb(14, 142, 247, .5), rgba(64, 204, 204, 0.2), rgb(236, 238, 241, .2));
+           
+        }
+        .navbar{
+            animation-duration: .3s;
+            animation-delay: .3s;
+        }
+        .header-section{
+            animation-duration: .3s;
+        }
+        .navbar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: .5;
+            z-index: -2;
+            background: linear-gradient(to right, rgb(14, 142, 247, .5), rgba(64, 204, 204, 0.2), rgb(236, 238, 241, .2));
+        }
+
+        .navbar-toggler {
+            display: initial;
+            color: whitesmoke !important;
+            padding: 4px;
+            padding-top: 9px;
+            background-color: teal;
+            border: 2px solid black;
+        }
+
+        .nav-item a {
+            color: whitesmoke !important;
+            font-weight: bold;
+            transition: .4s ease-in-out;
+
+        }
+
+        .nav-item a:hover {
+            color: #bcf2f4 !important;
+            text-decoration: underline;
+        }
+
+        .header-section {
+            height: 80%;
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-buttons a {
+            border: 2px solid whitesmoke;
+            background-color: whitesmoke;
+            padding: 5px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 20px;
+            transition: .5s ease-in-out;
+        }
+
+        .header-buttons a:hover {
+            background-color: #8cccd1;
+            color: whitesmoke;
+            border: none;
+            box-shadow: 0 0 10px 0 rgba(92, 89, 89, 0.986);
+        }
+
+        .header-extradiv {
+            width: 100vw;
+            height: auto;
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .extra-div {
+            background-color: whitesmoke;
+            padding: 30px !important;
+            border-radius: 5px;
+            transition: .3s ease-in-out;
+
+        }
+
+        .extra-div:hover {
+            box-shadow: 0 0 10px 0 rgba(92, 89, 89, 0.986);
+            transform: translateY(-30px);
+            z-index: 2;
+        }
+
+        .progress {
+            height: 1.5rem !important;
+            width: 96%;
+            margin-bottom: 25px;
+        }
+
+        #css .progress-bar {
+            background-color: #063363;
+        }
+
+        .serviceicons {
+            text-align: right;
+            color: #007bff
+        }
+
+        .service-offers {
+            background-color: rgb(199, 195, 195, .2);
+            padding: 25px 0;
+            margin-bottom: 8px;
+        }
+
+        .service-offers .offset-1 {
+            margin-bottom: 60px;
+        }
+
+        .names h1 {
+            margin-bottom: 0;
+        }
+
+        .project-work {
+            background-color: rgb(199, 195, 195, .2)
+        }
+
+        .achieve {
+            display: flex;
+            align-content: stretch;
+            justify-content: space-between;
+            margin: 25px 0;
+            align-items: center;
+        }
+
+        .card-title li {
+            list-style: none;
+            line-height: 21px;
+            font-size: smaller;
+        }
+
+        .pricing {
+            width: 100vw;
+            height: fit-content;
+            padding: 40px;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .pricing::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: .7;
+            z-index: -2;
+            background: linear-gradient(160deg, rgb(106, 197, 197, .5) 50%, rgb(199, 195, 195, .2) 55%);
+        }
+
+        .money {
+            font-size: 50px;
+        }
+
+        .dollar {
+            font-size: xx-large;
+        }
+
+        .card {
+            transition: .3s ease-in-out;
+        }
+
+        .card-header {
+            font-size: xx-large;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 30px 20px;
+        }
+
+        .btn a {
+            border: 2px solid whitesmoke;
+            background-color: whitesmoke;
+            padding: 5px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 20px;
+            transition: .5s ease-in-out;
+        }
+
+        .btn a:hover {
+            background-color: #8cccd1;
+            color: whitesmoke;
+            border: none;
+            box-shadow: 0 0 10px 0 rgba(92, 89, 89, 0.986);
+        }
+
+        .card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 0 10px 0 rgba(92, 89, 89, 0.986);
+        }
+
+        .card:hover .card-header,
+        .card:hover .money,
+        .card:hover .dollar {
+            color: rgb(13, 122, 122);
+        }
+
+        .first-card {
+            transform: translateY(80px);
+            margin-bottom: 108px;
+        }
+
+        .third-card {
+            transform: translateY(80px);
+            margin-bottom: 108px;
+        }
+
+        .second-card {
+            margin-bottom: -49px;
+        }
+
+        .happyclients {
+            width: 100vw;
+            height: fit-content;
+            padding: 20px 0;
+            margin-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(158, 156, 156, .2) !important;
+        }
+
+        .box {
+            text-align: center;
+            border: 1px solid gray;
+            box-shadow: 0 5px 10px 0 rgb(128, 128, 128, .3);
+            border-radius: 5px;
+            background-color: rgb(158, 156, 156, .5);
+            transition: .3s ease-in-out;
+        }
+
+        .box:hover {
+            background-color: rgb(13, 122, 122, .4);
+        }
+
+        .box:hover {
+            color: whitesmoke;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            right: 0;
+            bottom: -60px !important;
+        }
+
+        .carousel-indicators li {
+            background-color: rgb(158, 156, 156, .8) !important;
+        }
+
+        .carousel-indicators .active {
+            background-color: rgb(83, 201, 201) !important;
+        }
+
+        .box a {
+            position: relative;
+        }
+
+        .box a img {
+            width: 120px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: 30px;
+            background-size: contain;
+        }
+
+        .box a::after {
+            content: "\f10d";
+            font-family: FontAwesome;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(to right, rgb(35, 236, 236), rgb(158, 156, 156));
+            color: whitesmoke;
+            position: absolute;
+            top: 120%;
+            left: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box h1 {
+            font-weight: bold;
+        }
+
+        .box h2 {
+            font-size: medium;
+            margin-bottom: 20px;
+        }
+
+        .carousel-control-next-icon {
+
+            filter: invert(80%);
+            padding: 18px;
+        }
+
+        .carousel-control-next,
+        .carousel-control-prev {
+            width: 9%;
+        }
+
+        /* .carousel-control-next{
+            right: 55px;
+        } */
+
+
+        .carousel-control-prev-icon {
+            filter: invert(80%);
+            padding: 18px;
+        }
+
+        .happyclients .row {
+            margin: 0 130px;
+        }
+
+        .contact-us {
+            width: 100vw;
+            height: fit-content;
+            padding: 80px 0;
+            background: linear-gradient(160deg, rgb(199, 195, 195, .2) 47%, rgb(106, 197, 197, .5) 58%);
+        }
+
+        .form-group input:hover,
+        .form-group textarea:hover {
+            box-shadow: 0 0 10px 0 rgba(9, 208, 235, 0.986);
+        }
+
+        .form-button button {
+            border: 2px solid whitesmoke;
+            background-color: whitesmoke;
+            padding: 5px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 20px;
+            transition: .5s ease-in-out;
+            color: #3ba0a5;
+        }
+
+        .form-button button:hover {
+            background-color: #8cccd1;
+            color: whitesmoke;
+            border: none;
+            box-shadow: 0 0 10px 0 rgba(92, 89, 89, 0.986);
+            cursor: pointer;
+        }
+
+        .newsletter {
+            width: 100vw;
+            height: fit-content;
+            margin: 80px auto;
+        }
+
+        .news-input {
+            border-radius: 100px 0px 0px 100px !important;
+            min-width: 120px;
+            min-height: 45px;
+        }
+
+        .news-input:hover {
+            box-shadow: 0 0 10px 0 rgba(92, 89, 89, 0.986);
+        }
+
+        .input-group-text {
+            color: whitesmoke;
+            background-color: teal;
+            border-radius: 0 100px 100px 0;
+            font-size: larger;
+            padding-right: 17px;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+            min-width: 100px;
+            min-height: 45px;
+            text-align: center;
+        }
+
+        .input-group-text:hover {
+            background-color: rgb(4, 136, 136, .4);
+            font-weight: bold;
+            box-shadow: 0 0 10px 0 rgba(82, 148, 153, 0.986);
+        }
+
+        .nl {
+            display: flex;
+            flex-direction: row;
+            text-align: right;
+            justify-content: center;
+        }
+
+        .footer-section h3 {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(92, 89, 89, 0.986);
+        }
+
+        .footer-section ul li {
+            list-style: none;
+            text-align: center;
+            line-height: 27px;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            font-weight: bolder;
+        }
+
+        .footer-section {
+            width: 100vw;
+            height: auto;
+            padding: 80px 0 20px;
+            background: linear-gradient(to left, rgb(14, 142, 247, .5), rgba(64, 204, 204, 0.2), rgb(14, 142, 247, .5));
+        }
+
+        #top-button {
+            position: fixed;
+            bottom: 20px;
+            right: 50px;
+            z-index: 10;
+            border: none;
+            color: whitesmoke;
+            background-color: teal;
+            padding: 6px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: .3s ease-in-out;
+        }
+
+        #top-button:hover {
+            background: none;
+            text-shadow: 0 2px 5px rgba(92, 89, 89, 0.986);
+            color: gray;
+        }
+
+        @media (max-width:770px) {
+            .contact-us .row {
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width:920px) {
+            .nav-item {
+                text-align: center !important;
+            }
+
+            .achieve {
+                flex-direction: column;
+            }
+
+            .header-section {
+                height: 60%;
+            }
+
+            .box {
+                width: auto;
+                margin-bottom: 20px;
+            }
+
+            .col-lg-4 .col-md-4 .col-12 {
+                margin: 20px 20px !important;
+            }
+
+            .happyclients .row {
+                margin: 0 60px;
+            }
+
+            .footerdiv {
+                text-align: left;
+                padding: 8px !important;
+            }
+
+            .footerdiv h3 {
+                text-align: left;
+            }
+
+            .footerdiv ul li {
+                text-align: left !important;
+                font-size: x-large;
+            }
+
+
+        }
+
+        .collapsed .navbar-toggler-icon i {
+            transform: rotateX(180deg) !important;
+        }
+
+        .colla .navbar-toggler-icon i {
+            transform: rotateX(180deg) !important;
+        }
+
+        .header i {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header" id="top-header">
+            <nav class="navbar navbar-expand-lg animate__animated animate__backInUp">
+                <div class="container p-2">
+                    <a class="navbar-brand" href="#" style="font-size:xx-large; color: whitesmoke;">webIt</a>
+                    <button class="navbar-toggler colla" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation" onclick="coll()">
+                        <span class="navbar-toggler-icon"><i class="fa-1x fa fa-arrow-circle-up"
+                                aria-hidden="true"></i></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link text-uppercase" href="#top-header">Home <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase" href="#serv">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase" href="#soff">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase" href="#price">Prices</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#happyc">WordsFromUsers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase" href="#contact">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-uppercase" href="#newslet">subscription</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <section class="header-section animate__animated animate__backInDown">
+            <div class="center-div">
+                <h1 class="font-weight-bold" style="font-size: xxx-large;">Web Developers at your service</h1>
+                <p style="font-size: larger; padding: 10px 0 25px 0;">We help you with the perfect web sites meeting
+                    your requirements!</p>
+                <div class="header-buttons">
+                    <a href="#soff">About Us</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </header>
+    <br>
+    <hr>
+    <br>
+    <section class="header-extradiv" id="serv">
+        <div class="container">
+            <div class="row">
+                <div class="extra-div col-lg-4 col-md-4 col-12">
+                    <a href="#"><i class="fa-4x fa fa-desktop" aria-hidden="true"></i></a>
+                    <h2 style="font-weight: bold; padding-top: 20px;">USER FRIENDLY</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt numquam maxime iure, ducimus
+                        facilis a. Explicabo exercitationem consequatur debitis pariatur ipsum cum quos consectetur,
+                        nisi et vel facilis? Accusantium, praesentium.</p>
+                </div>
+                <div class="extra-div col-lg-4 col-md-4 col-12">
+                    <a href="#"><i class="fa-4x fa fa-paint-brush" aria-hidden="true"></i></a>
+                    <h2 style="font-weight: bold; padding-top: 20px;">ENTICING DESIGNS</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt numquam maxime iure, ducimus
+                        facilis a. Explicabo exercitationem consequatur debitis pariatur ipsum cum quos consectetur,
+                        nisi et vel facilis? Accusantium, praesentium.</p>
+                </div>
+                <div class="extra-div col-lg-4 col-md-4 col-12">
+                    <a href="#"><i class="fa-4x fa fa-magic" aria-hidden="true"></i></a>
+                    <h2 style="font-weight: bold; padding-top: 20px;">EASY TO CUSTOMISE</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt numquam maxime iure, ducimus
+                        facilis a. Explicabo exercitationem consequatur debitis pariatur ipsum cum quos consectetur,
+                        nisi et vel facilis? Accusantium, praesentium.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <br>
+    <section class="service-offers" id="soff">
+        <div class="container text-center">
+            <h1 class="text-center" style="font-weight: bold;">WHAT DO WE OFFER?</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque delectus nemo sit? Id unde atque dolores
+                ad laudantium omnis laboriosam quas alias minus exercitationem consequuntur, adipisci tempora soluta nam
+                nostrum?</p>
+        </div>
+        <div class="container">
+            <div class="row" style="align-items: baseline;">
+                <div class="col-lg-6 col-md-12 col-10 offset-1 offset-lg-0">
+                    <div class="names my-3">
+                        <h1>HTML</h1>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+                                role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 100%">100%</div>
+                        </div>
+                    </div>
+                    <div class="names my-3" id="css">
+                        <h1>CSS</h1>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 85%">85%</div>
+                        </div>
+                    </div>
+                    <div class="names my-3">
+                        <h1>JS</h1>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                                role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 75%">75%</div>
+                        </div>
+                    </div>
+                    <div class="names my-3">
+                        <h1>REACTJS</h1>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+                                role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 65%">65%</div>
+                        </div>
+                    </div>
+                    <div class="names my-3">
+                        <h1>NODEJS</h1>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 67%">67%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-12 servicediv">
+                    <div class="row">
+                        <div class="col-lg-2 col-2 serviceicons">
+                            <i class="fa-2x fa fa-television" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-lg-10 col-10" style="padding-left: 0;">
+                            <h2 style="font-weight: bold;">WEBSITE DEVEOPEMENT</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam possimus,
+                                sapiente nulla eius accusantium magnam ratione sint nostrum vel, quas consequatur alias
+                                aperiam modi recusandae voluptate accusamus temporibus quos!</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-2 serviceicons">
+                            <i class="fa-2x fa fa-wifi" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-lg-10 col-10" style="padding-left: 0;">
+                            <h2 style="font-weight: bold;">DIGITAL MARKETING</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam possimus,
+                                sapiente nulla eius accusantium magnam ratione sint nostrum vel, quas consequatur alias
+                                aperiam modi recusandae voluptate accusamus temporibus quos!</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-2 serviceicons">
+                            <i class="fa-2x fa fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-lg-10 col-10" style="padding-left: 0;">
+                            <h2 style="font-weight: bold;">HELP 24/7</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam possimus,
+                                sapiente nulla eius accusantium magnam ratione sint nostrum vel, quas consequatur alias
+                                aperiam modi recusandae voluptate accusamus temporibus quos!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-work">
+        <div class="container text-center">
+            <h1 class="text-center" style="font-weight: bold;">OUR ACHIEVEMENTS</h1>
+            <div class="container achieve">
+                <div>
+                    <h1 class="count">2000</h1>
+                    <p>Websites Developed</p>
+                </div>
+                <div>
+                    <h1 class="count">500</h1>
+                    <p>Happy Clients</p>
+                </div>
+                <div>
+                    <h1 class="count">100</h1>
+                    <p>Awards Won</p>
+                </div>
+                <div>
+                    <h1 class="count">1500</h1>
+                    <p>Web Developers got Hired</p>
+                </div>
+            </div>
+    </section>
+    <br>
+    <hr>
+    <br>
+    <section class="pricing" id="price">
+        <div class="container text-center" style="margin-bottom: 35px;">
+            <h1 class="text-center" style="font-weight: bold;">OUR PRICES</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12 first-card">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            CLASSIC
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <li><span class="dollar">$</span><span class="money">20</span>/Website</li><br>
+                                <li>Responsive Websites</li><br>
+                                <li>Webmail Support</li><br>
+                                <li>Customer Support 24/7</li>
+                            </h5>
+                            <hr>
+                            <div class="btn"><a href="#">PURCHASE</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12 second-card">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            PREMIUM
+                        </div>
+                        <span style="padding-top: 5px;"><i><b>Users' Choice</b></i> </span>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <li><span class="dollar">$</span><span class="money">80</span>/Website</li><br>
+                                <li>Responsive Websites</li><br>
+                                <li>Webmail Support</li><br>
+                                <li>Customer Support 24/7</li><br>
+                                <li>Web Development support materials</li><br>
+                                <li>Chance to get placed in a reknowed Company(We will create you resume based on your
+                                    achievements and work)</li><br>
+                                <li>Also grab Combo Offers to get the services of various platforms(YouTube Premium and
+                                    other platforms requiring subscription) free of cost.</li>
+                            </h5>
+                            <hr>
+                            <div class="btn"><a href="#">PURCHASE</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 third-card">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            BOOSTER
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <li><span class="dollar">$</span><span class="money">50</span>/Website</li><br>
+                                <li>Responsive Websites</li><br>
+                                <li>Webmail Support</li><br>
+                                <li>Customer Support 24/7</li><br>
+                                <li>Web Development support materials</li><br>
+                                <li>Chance to get placed in a reknowed Company(You have create you own resume)</li>
+                            </h5>
+                            <hr>
+                            <div class="btn"><a href="#">PURCHASE</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="happyclients" id="happyc">
+        <div class="container text-center" style="margin-bottom: 35px;">
+            <h1 class="text-center" style="font-weight: bold;">FROM OUR SATISFIED CUSTOMERS</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="box">
+                                <a href="#"><img src="usericon.png" alt="" class="img-fluid img-thumbnail"></a>
+                                <p class="m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+                                    repellendus explicabo rerum unde reiciendis aut corrupti dolores obcaecati nobis
+                                    aspernatur quod sit animi itaque pariatur dolor quam quo quisquam architecto.</p>
+                                <h1>Username</h1>
+                                <h2>Designation</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="box">
+                                <a href="#"><img src="usericon.png" alt="" class="img-fluid img-thumbnail"></a>
+                                <p class="m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+                                    repellendus explicabo rerum unde reiciendis aut corrupti dolores obcaecati nobis
+                                    aspernatur quod sit animi itaque pariatur dolor quam quo quisquam architecto.</p>
+                                <h1>Username</h1>
+                                <h2>Designation</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="box">
+                                <a href="#"><img src="usericon.png" alt="" class="img-fluid img-thumbnail"></a>
+                                <p class="m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+                                    repellendus explicabo rerum unde reiciendis aut corrupti dolores obcaecati nobis
+                                    aspernatur quod sit animi itaque pariatur dolor quam quo quisquam architecto.</p>
+                                <h1>Username</h1>
+                                <h2>Designation</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="box">
+                                <a href="#"><img src="usericon.png" alt="" class="img-fluid img-thumbnail"></a>
+                                <p class="m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+                                    repellendus explicabo rerum unde reiciendis aut corrupti dolores obcaecati nobis
+                                    aspernatur quod sit animi itaque pariatur dolor quam quo quisquam architecto.</p>
+                                <h1>Username</h1>
+                                <h2>Designation</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="box">
+                                <a href="#"><img src="usericon.png" alt="" class="img-fluid img-thumbnail"></a>
+                                <p class="m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+                                    repellendus explicabo rerum unde reiciendis aut corrupti dolores obcaecati nobis
+                                    aspernatur quod sit animi itaque pariatur dolor quam quo quisquam architecto.</p>
+                                <h1>Username</h1>
+                                <h2>Designation</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="box">
+                                <a href="#"><img src="usericon.png" alt="" class="img-fluid img-thumbnail"></a>
+                                <p class="m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+                                    repellendus explicabo rerum unde reiciendis aut corrupti dolores obcaecati nobis
+                                    aspernatur quod sit animi itaque pariatur dolor quam quo quisquam architecto.</p>
+                                <h1>Username</h1>
+                                <h2>Designation</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="box">
+                                <a href="#"><img src="usericon.png" alt="" class="img-fluid img-thumbnail"></a>
+                                <p class="m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+                                    repellendus explicabo rerum unde reiciendis aut corrupti dolores obcaecati nobis
+                                    aspernatur quod sit animi itaque pariatur dolor quam quo quisquam architecto.</p>
+                                <h1>Username</h1>
+                                <h2>Designation</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="box">
+                                <a href="#"><img src="usericon.png" alt="" class="img-fluid img-thumbnail"></a>
+                                <p class="m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+                                    repellendus explicabo rerum unde reiciendis aut corrupti dolores obcaecati nobis
+                                    aspernatur quod sit animi itaque pariatur dolor quam quo quisquam architecto.</p>
+                                <h1>Username</h1>
+                                <h2>Designation</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="box">
+                                <a href="#"><img src="usericon.png" alt="" class="img-fluid img-thumbnail"></a>
+                                <p class="m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+                                    repellendus explicabo rerum unde reiciendis aut corrupti dolores obcaecati nobis
+                                    aspernatur quod sit animi itaque pariatur dolor quam quo quisquam architecto.</p>
+                                <h1>Username</h1>
+                                <h2>Designation</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <hr>
+
+    <section class="contact-us" id="contact">
+        <div class="container text-center" style="margin-bottom: 35px;">
+            <h1 class="text-center" style="font-weight: bold;">GET IN TOUCH WITH US</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-2 col-1">
+                    <form action="/action_page.php">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" placeholder="Enter Your Name" required
+                                autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                placeholder="Enter Your E-mail" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="phno" placeholder="Enter Your Phone number"
+                                required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                placeholder="Any Comments?"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-center form-button">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr><br>
+    <section class="newsletter" id="newslet">
+        <div class="container text-center" style="margin-bottom: 35px;">
+            <h1 class="text-center" style="font-weight: bold;">SUBSCRIBE TO OUR NEWSLETTER</h1>
+        </div>
+        <form action="/noaction.php">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 col-12">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control news-input" placeholder="Enter Your E-mail"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">Subscribe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    <hr>
+    <footer class="footer-section" id="foot">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 footerdiv">
+                    <div>
+                        <h3>ABOUT webIt</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam a quas error at, saepe et
+                            quod expedita esse distinctio blanditiis repellendus, amet molestias soluta libero pariatur
+                            sequi ut optio suscipit.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 footerdiv">
+                    <div>
+                        <h3>NAVIGATION LINKS</h3>
+                        <ul>
+                            <li><a href="#top-header">Home</a></li>
+                            <li><a href="#serv">Services</a></li>
+                            <li><a href="#soff">About</a></li>
+                            <li><a href="#price">Prices</a></li>
+                            <li><a href="#happyc">WordsFromUsers</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#newslet">Subscription</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-12 footerdiv">
+                    <div>
+                        <h3>NEWSLETTER</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam a quas error at, saepe et
+                            quod expedita esse distinctio blanditiis repellendus, amet molestias soluta libero pariatur
+                            sequi ut optio suscipit.</p>
+                        <div class="container nl" style="padding: 10px;">
+                            <div class="row">
+                                <div class="col-lg-12 col-12">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control news-input"
+                                            placeholder="Enter Your E-mail" aria-label="Recipient's username"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2">Subscribe</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+            <div class="my-5 text-center" style="font-weight: bold;">
+                <p>&copy;2021 webIt | All Rights Reserved.</p>
+            </div>
+            <div class="scrolltop float-right" style="opacity: .9;">
+                <i class="fa-2x fa fa-arrow-up" aria-hidden="true" onclick="topfunc()" id="top-button"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap CSS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
+        integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"
+        integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script>
+        $('.count').counterUp({
+            delay: 10,
+            time: 1000
+        });
+        topbtn = document.getElementById('top-button');
+        colla = document.querySelector('.colla');
+        window.onscroll = function () { scrollfunc() };
+        function scrollfunc() {
+            if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
+                topbtn.style.display = 'block';
+            }
+            else {
+                topbtn.style.display = 'none';
+            }
+        }
+
+        function topfunc() {
+            document.body.scrollTop = 0;//for Safari
+            document.documentElement.scrollTop = 0;//for Chrome, Edge, Opera
+
+        }
+        function coll() {
+            colla.classList.remove('colla');
+        }
+    </script>
+</body>
+
+</html>
